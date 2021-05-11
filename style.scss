@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+
+$text-main: hsl(0, 0%, 100%);
+$text-highlight: hsl(277, 64%, 61%);
+$main-paragraph: hsla(0, 0%, 100%, 0.75);
+$stat-headings: hsla(0, 0%, 100%, 0.6);
+$card-bg: hsl(244, 38%, 16%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: hsl(233, 47%, 7%);
+  height: 100%;
+}
+
+p {
+  font-size: 15px;
+}
+
+
+.heading {
+  color: $text-main;
+  font-weight: 700;
+  letter-spacing: .55px;
+}
+
+.highlight {
+  color: $text-highlight;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  justify-content: space-evenly;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  border-radius: 10px;
+  overflow: hidden; // Fixes border-radius
+  width: 100%;
+  margin: 0 2rem;
+}
+
+.left-side {
+  background-color: $card-bg;
+  padding: 4.5rem 4rem;
+
+  .left-side-content {
+    width: 90%;
+
+    .left-side-text {
+      color: $stat-headings;
+      margin-top: 1.75rem;
+      margin-right: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .left-side-stats {
+      margin-top: 4rem;
+      display: flex;
+
+      .stat {
+        margin-right: 4rem;
+
+        .stat-heading {
+          color: $text-main;
+          font-size: 22px;
+        }
+
+        .stat-text {
+          font-family: 'Lexend Deca', sans-serif;
+          font-size: 13px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          margin-top: .35rem;
+          color: $stat-headings;
+        }
+      }
+    }
+  }
+}
+
+.right-side {
+  background-color: $text-highlight;
+  background-image: url('/images/image-header-desktop.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  // Purple filter
+  box-shadow: inset 0 0 0 2000px hsla(281, 88%, 25%, 0.555);
+}
+
+
+
+
+// ----------- MEDIA QUERIES -----------
+@media screen and (max-width: 1095px) {
+  .left-side {
+    padding: 3.5rem 3rem;
+
+    .left-side-content {
+      width: 90%;
+
+      .heading {
+        font-size: 28px;
+      }
+
+      .left-side-text {
+        margin-right: 1rem;
+        font-size: 14px;
+      }
+
+      .left-side-stats {
+        margin-top: 4rem;
+        display: flex;
+
+        .stat {
+          margin-right: 2rem;
+
+          .stat-heading {
+            font-size: 20px;
+          }
+
+          .stat-text {
+            font-size: 12px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .right-side {
+    height: 250px;
+  }
+
+  .left-side {
+    order: 2;
+    text-align: center;
+    padding: 3rem 2rem;
+
+    .left-side-content {
+      width: 100%;
+
+      .left-side-text {
+        margin-right: 0;
+      }
+
+      .left-side-stats {
+        justify-content: space-evenly;
+
+        .stat { margin-right: 0; }
+      }
+    }
+  }
+
+  .right-side {
+    order: 1;
+    background-image: url('/images/image-header-mobile.jpg');
+    background-position: 0% 0%; // default value
+  }
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+
+  .card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .right-side {
+    height: 200px;
+  }
+
+  .left-side {
+    padding: 2rem 1.75rem;
+
+    .left-side-content {
+      .heading {
+        font-size: 22px;
+      }
+
+      .left-side-text { margin-top: 1rem; }
+
+      .left-side-stats {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .stat { margin-top: 1.75rem; }
+      }
+    }
+  }
+}

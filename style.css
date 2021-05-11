@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #090b1a;
+  height: 100%;
+}
+
+p {
+  font-size: 15px;
+}
+
+.heading {
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.55px;
+}
+
+.highlight {
+  color: #aa5cdb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  justify-content: space-evenly;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 2rem;
+}
+
+.left-side {
+  background-color: #1b1938;
+  padding: 4.5rem 4rem;
+}
+.left-side .left-side-content {
+  width: 90%;
+}
+.left-side .left-side-content .left-side-text {
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 1.75rem;
+  margin-right: 1rem;
+  line-height: 1.5rem;
+}
+.left-side .left-side-content .left-side-stats {
+  margin-top: 4rem;
+  display: flex;
+}
+.left-side .left-side-content .left-side-stats .stat {
+  margin-right: 4rem;
+}
+.left-side .left-side-content .left-side-stats .stat .stat-heading {
+  color: white;
+  font-size: 22px;
+}
+.left-side .left-side-content .left-side-stats .stat .stat-text {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.right-side {
+  background-color: #aa5cdb;
+  background-image: url("/images/image-header-desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 2000px rgba(84, 8, 120, 0.555);
+}
+
+@media screen and (max-width: 1095px) {
+  .left-side {
+    padding: 3.5rem 3rem;
+  }
+  .left-side .left-side-content {
+    width: 90%;
+  }
+  .left-side .left-side-content .heading {
+    font-size: 28px;
+  }
+  .left-side .left-side-content .left-side-text {
+    margin-right: 1rem;
+    font-size: 14px;
+  }
+  .left-side .left-side-content .left-side-stats {
+    margin-top: 4rem;
+    display: flex;
+  }
+  .left-side .left-side-content .left-side-stats .stat {
+    margin-right: 2rem;
+  }
+  .left-side .left-side-content .left-side-stats .stat .stat-heading {
+    font-size: 20px;
+  }
+  .left-side .left-side-content .left-side-stats .stat .stat-text {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .right-side {
+    height: 250px;
+  }
+
+  .left-side {
+    order: 2;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+  .left-side .left-side-content {
+    width: 100%;
+  }
+  .left-side .left-side-content .left-side-text {
+    margin-right: 0;
+  }
+  .left-side .left-side-content .left-side-stats {
+    justify-content: space-evenly;
+  }
+  .left-side .left-side-content .left-side-stats .stat {
+    margin-right: 0;
+  }
+
+  .right-side {
+    order: 1;
+    background-image: url("/images/image-header-mobile.jpg");
+    background-position: 0% 0%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .right-side {
+    height: 200px;
+  }
+
+  .left-side {
+    padding: 2rem 1.75rem;
+  }
+  .left-side .left-side-content .heading {
+    font-size: 22px;
+  }
+  .left-side .left-side-content .left-side-text {
+    margin-top: 1rem;
+  }
+  .left-side .left-side-content .left-side-stats {
+    margin-top: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .left-side .left-side-content .left-side-stats .stat {
+    margin-top: 1.75rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
